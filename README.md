@@ -1,53 +1,64 @@
-# 🔄 Geospatial Data Engineering
+# 🔥 FIRMS Data Engineering Pipeline 🌍
 
-*Data Pipeline Architecture & ETL | データパイプライン*
+**Real-time global wildfire monitoring** using **automated ETL, spatial databases with PostGIS, a scalable API with FastAPI, and an interactive web frontend powered by Leaflet.**
 
-## Overview 概要
+## 📌 Key Features
 
-This repository showcases data engineering practices for geospatial workflows. Perfect for data engineers, GIS analysts, and developers working with spatial data pipelines.
+✅ **Automated data ingestion** from NASA FIRMS every 15 minutes.  
+✅ **Efficient storage** in PostgreSQL/PostGIS with spatial indexing.  
+✅ **Optimized API with FastAPI** for GeoJSON queries, time-based filtering, and spatial searches.  
+✅ **Real-time visualization** using Leaflet on a simple yet effective web interface.  
+✅ **Deployment via Docker** for easy replication and scalability.  
 
-## 📚 Notebooks
+## 🏗️ Architecture
 
-1. **ETL for Spatial Data** 
-   - Data extraction from various sources
-   - Spatial transformations
-   - Loading optimizations
-   - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](link-to-your-notebook)
+📡 **ETL:** Fetches and transforms FIRMS data → Stores in PostGIS.  
+🛰️ **PostGIS:** Spatial database optimized for geospatial queries.  
+🚀 **FastAPI API:** Serves data with filters by date, region, and more.  
+🌍 **Leaflet Web App:** Displays real-time wildfire data interactively.  
+🐳 **Docker Compose:** Manages the entire infrastructure for easy deployment.  
 
-2. **Quality Control & Validation** 
-   - Spatial data validation
-   - Error detection
-   - Automated testing
-   - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](link-to-your-notebook)
-
-3. **Pipeline Automation** 
-   - Workflow orchestration
-   - Monitoring systems
-   - Performance optimization
-   - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](link-to-your-notebook)
-
-## 🛠️ Technologies
-
-- **ETL Tools**: Apache Airflow, dbt
-- **Databases**: PostGIS, MongoDB
-- **Data Lakes**: AWS S3, GCS
-- **Processing**: Pandas, Dask, PySpark
-
-## 🚀 Getting Started
-
-```bash
-# Clone repository
-git clone https://github.com/yourusername/spatial-data-engineering
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Launch Jupyter
-jupyter notebook
+```plaintext
+[FIRMS WFS API] -> [ETL Pipeline] -> [PostgreSQL + PostGIS] -> [FastAPI] -> [Web UI]
+                   (Python/Pandas)     (Spatial Database)     (REST API)  (Leaflet)
 ```
 
-## 📈 Best Practices
-Explore modern data engineering architectures and best practices for handling spatial data at scale.
+## ⚙️ Installation & Usage
+
+1️⃣ **Clone the repository**  
+```bash
+git clone https://github.com/[username]/firms-pipeline.git
+cd firms-pipeline
+```
+
+2️⃣ **Run everything with Docker**  
+```bash
+docker-compose up -d
+```
+
+3️⃣ **Access the API and Web Interface**  
+- **API Documentation:** `http://localhost:8001/docs`  
+- **Web Map:** `http://localhost:8080/`  
+
+## 🌐 API Reference
+
+Example: Fetch wildfires from the last 24 hours in GeoJSON format.  
+```bash
+curl http://localhost:8001/fires/recent?hours=24
+```
+
+## 🚀 Scalability & Future Enhancements
+
+🔹 **Big Data Support:** Scale with Kubernetes or Airflow.  
+🔹 **Machine Learning Predictions:** Detect wildfire patterns using ML models.  
+🔹 **PostGIS Optimization:** Indexing and partitioning for large datasets.  
+🔹 **Interactive Dashboard:** Advanced analytics with charts and statistics.  
+
+## 💻 Tech Stack | 技術スタック
+- **Backend**: Python, FastAPI, GeoPandas
+- **Database**: PostgreSQL, PostGIS
+- **Frontend**: Leaflet.js, HTML/CSS
+- **Infrastructure**: Docker, Docker Compose
 
 ## Let's Connect! 一緒に学びましょう 🌐
 
@@ -58,6 +69,5 @@ Explore modern data engineering architectures and best practices for handling sp
 [![Discord Badge](https://img.shields.io/badge/-Gastón|ガストン-5865F2?style=flat&logo=discord&logoColor=white&link=https://discord.com/users/gastonechenique)](https://discord.com/users/gastonechenique)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/rhrqmdyaig)
 
-よろしくお願いします！Build robust data pipelines together!
----
-*さようなら - Happy Engineering!* 🔄
+🔥 **This pipeline is more than an ETL; it's a production-ready geospatial data infrastructure.**  
+Designed for **Data Engineers and GIS enthusiasts** to analyze real-time wildfire data. 🌎📡
